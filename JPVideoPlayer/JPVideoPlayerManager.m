@@ -655,8 +655,8 @@ shouldResumePlaybackWhenApplicationDidBecomeActiveFromResignActiveForURL:self.ma
     if (self.delegate && [self.delegate respondsToSelector:@selector(videoPlayerManagerPreferAudioSessionCategory:)]) {
         audioSessionCategory = [self.delegate videoPlayerManagerPreferAudioSessionCategory:self];
     }
+    [AVAudioSession.sharedInstance setCategory:audioSessionCategory withOptions:AVAudioSessionCategoryOptionMixWithOthers error:nil];
     [AVAudioSession.sharedInstance setActive:YES error:nil];
-    [AVAudioSession.sharedInstance setCategory:audioSessionCategory error:nil];
 }
 
 
