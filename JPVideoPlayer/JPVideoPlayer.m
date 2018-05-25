@@ -463,7 +463,7 @@ didReceiveLoadingRequestTask:(JPResourceLoadingRequestWebTask *)requestTask {
         [strong_Item.player play];
 
         if (self.delegate && [self.delegate respondsToSelector:@selector(videoPlayer:playerStatusDidChange:)]) {
-            [self.delegate videoPlayer:self playerStatusDidChange:JPVideoPlayerStatusPlaying];
+            [self.delegate videoPlayer:self playerStatusDidChange:JPVideoPlayerStatusBeginning];
         }
     }];
 }
@@ -489,7 +489,7 @@ didReceiveLoadingRequestTask:(JPResourceLoadingRequestWebTask *)requestTask {
                 [self.playerModel.player play];
                 [self displayVideoPicturesOnShowLayer];
                 if (self.delegate && [self.delegate respondsToSelector:@selector(videoPlayer:playerStatusDidChange:)]) {
-                    [self.delegate videoPlayer:self playerStatusDidChange:self.playerStatus];
+                    [self.delegate videoPlayer:self playerStatusDidChange:JPVideoPlayerStatusBeginning];
                 }
             }
                 break;
